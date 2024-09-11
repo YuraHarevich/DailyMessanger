@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import ru.Harevich.Messanger.detailsService.UserDetailsService;
 
 @Configuration
@@ -41,7 +42,7 @@ public class SecurityConfig {
                                 .loginPage("/login")
                                 .loginProcessingUrl("/process_login")
                                 .successHandler(savedRequestAwareAuthenticationSuccessHandler())
-                                //.defaultSuccessUrl("/", true)
+                                .defaultSuccessUrl("/hello", true)
                                 .permitAll()
                 );
         return http.build();
@@ -67,5 +68,10 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public SavedRequestAwareAuthenticationSuccessHandler savedRequestAwareAuthenticationSuccessHandler() {
+        return new SavedRequestAwareAuthenticationSuccessHandler();
     }
 }
