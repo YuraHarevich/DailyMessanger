@@ -1,4 +1,4 @@
-package ru.Harevich.Messanger.controller;
+package ru.Harevich.Messenger.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -6,20 +6,30 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import ru.Harevich.Messanger.entity.User;
-import ru.Harevich.Messanger.service.UserService;
+import org.springframework.web.bind.annotation.RestController;
+import ru.Harevich.Messenger.DTO.PersonDTO;
+import ru.Harevich.Messenger.entity.Person;
+import ru.Harevich.Messenger.entity.User;
+import ru.Harevich.Messenger.service.PersonService;
+import ru.Harevich.Messenger.service.UserService;
 
-@Controller
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
 public class UserController {
     private final UserService userService;
+    private final PersonService personService;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, PersonService personService) {
         this.userService = userService;
+        this.personService = personService;
     }
 
-    @GetMapping("/hello")
-    public String test(){
-        return "/hello";
+    @GetMapping("hello")
+    public List<PersonDTO> test(){
+        return personService.getAll().stream().map(Person::toPersonDTO).collect(Collectors.toList());
     }
     @GetMapping("/registration")
     public String registration(@ModelAttribute("user") User user){

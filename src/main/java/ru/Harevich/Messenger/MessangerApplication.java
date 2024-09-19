@@ -1,4 +1,4 @@
-package ru.Harevich.Messanger;
+package ru.Harevich.Messenger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,13 +1,11 @@
-package ru.Harevich.Messanger.details;
+package ru.Harevich.Messenger.details;
 
-import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import ru.Harevich.Messanger.entity.User;
+import ru.Harevich.Messenger.entity.User;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 
 public class UserDetails implements org.springframework.security.core.userdetails.UserDetails {
