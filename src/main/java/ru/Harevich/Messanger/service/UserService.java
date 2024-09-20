@@ -16,6 +16,7 @@ public class UserService {
         this.userRepository = userRepository;
         this.encoder = encoder;
     }
+    @Transactional("transactionManager")
     public void registrate(User user) {
         user.setPassword(encoder.encode(user.getPassword()));
         user.setRole("ROLE_USER");

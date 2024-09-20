@@ -7,6 +7,7 @@ import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
+import ru.Harevich.Messanger.DTO.PersonDTO;
 
 import java.util.List;
 
@@ -23,4 +24,7 @@ public class Person {
     @Relationship("FRIEND")
     List<Person> friend;
 
+    public PersonDTO toPersonDTO(){
+        return new PersonDTO(id,username);
+    }
 }

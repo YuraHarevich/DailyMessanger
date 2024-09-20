@@ -15,7 +15,7 @@ public class PersonService {
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
-    @Transactional(readOnly = true)
+    @Transactional("transactionManagerNeo4j")
     public List<Person> getAll(){
         return personRepository.findAll();
     }
