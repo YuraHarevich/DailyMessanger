@@ -7,7 +7,7 @@ import ru.Harevich.Messanger.entity.User;
 import ru.Harevich.Messanger.repository.UserRepository;
 
 @Service
-@Transactional
+@Transactional("transactionManager")
 public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder encoder;
@@ -16,7 +16,7 @@ public class UserService {
         this.userRepository = userRepository;
         this.encoder = encoder;
     }
-    @Transactional("transactionManager")
+
     public void registrate(User user) {
         user.setPassword(encoder.encode(user.getPassword()));
         user.setRole("ROLE_USER");

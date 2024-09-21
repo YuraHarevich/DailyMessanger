@@ -2,13 +2,12 @@ package ru.Harevich.Messanger.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.Harevich.Messanger.DTO.PersonDTO;
+import ru.Harevich.Messanger.entity.Message;
 import ru.Harevich.Messanger.entity.Person;
 import ru.Harevich.Messanger.entity.User;
+import ru.Harevich.Messanger.service.MessageService;
 import ru.Harevich.Messanger.service.PersonService;
 import ru.Harevich.Messanger.service.UserService;
 
@@ -19,10 +18,12 @@ import java.util.stream.Collectors;
 public class UserController {
     private final UserService userService;
     private final PersonService personService;
+    private final MessageService messageService;
 
-    public UserController(UserService userService, PersonService personService) {
+    public UserController(UserService userService, PersonService personService, MessageService messageService) {
         this.userService = userService;
         this.personService = personService;
+        this.messageService = messageService;
     }
 
     @GetMapping("hello")
@@ -45,6 +46,15 @@ public class UserController {
     @GetMapping("/login")
     public String login(){
         return "login";
+    }
+
+    @GetMapping("message")
+    public List<Message> getMessages(){
+        return messageService.get();
+    }
+    @GetMapping("message/{sender}")
+    public Message getMessages(@PathVariable("sender")String sender){
+        return messageService.getBySender(sender);
     }
 
 }

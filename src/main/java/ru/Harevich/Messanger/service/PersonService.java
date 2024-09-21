@@ -8,14 +8,14 @@ import ru.Harevich.Messanger.repository.PersonRepository;
 import java.util.List;
 
 @Service
-@Transactional
+@Transactional("transactionManagerNeo4j")
 public class PersonService {
     private final PersonRepository personRepository;
 
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
-    @Transactional("transactionManagerNeo4j")
+
     public List<Person> getAll(){
         return personRepository.findAll();
     }

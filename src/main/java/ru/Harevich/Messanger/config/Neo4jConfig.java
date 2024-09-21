@@ -13,12 +13,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class Neo4jConfig {
 
     @Bean
-    public Driver neo4jDriver() {
-        return GraphDatabase.driver("bolt://localhost:7687", AuthTokens.basic("neo4j", "helloWRLD"));
-    }
-
-    @Bean
     public Neo4jTransactionManager transactionManagerNeo4j(Driver driver) {
+        // Driver будет автоматически сконфигурирован Spring Boot на основе application.properties
         return new Neo4jTransactionManager(driver);
     }
 }
