@@ -1,9 +1,9 @@
-package ru.Harevich.Messanger.service;
+package ru.Harevich.Messenger.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.Harevich.Messanger.entity.Person;
-import ru.Harevich.Messanger.repository.PersonRepository;
+import ru.Harevich.Messenger.entity.Person;
+import ru.Harevich.Messenger.repository.PersonRepository;
 
 import java.util.List;
 

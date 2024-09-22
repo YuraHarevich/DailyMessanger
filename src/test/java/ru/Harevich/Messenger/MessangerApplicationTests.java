@@ -1,10 +1,10 @@
-package ru.Harevich.Messanger;
+package ru.Harevich.Messenger;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MessangerApplicationTests {
+class MessengerApplicationTests {
 
 	@Test
 	void contextLoads() {

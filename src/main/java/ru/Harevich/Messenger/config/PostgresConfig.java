@@ -1,4 +1,4 @@
-package ru.Harevich.Messanger.config;
+package ru.Harevich.Messenger.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.context.annotation.Bean;
@@ -31,7 +31,7 @@ public class PostgresConfig {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(dataSource);
         emf.setJpaVendorAdapter(jpaVendorAdapter);
-        emf.setPackagesToScan("ru.Harevich.Messanger.entity");
+        emf.setPackagesToScan("ru.Harevich.Messenger.entity");
         return emf;
     }
 

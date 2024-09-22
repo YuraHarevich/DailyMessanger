@@ -1,4 +1,4 @@
-package ru.Harevich.Messanger.DTO;
+package ru.Harevich.Messenger.DTO;
 
 import lombok.AllArgsConstructor;
 

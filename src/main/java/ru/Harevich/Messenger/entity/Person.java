@@ -1,4 +1,4 @@
-package ru.Harevich.Messanger.entity;
+package ru.Harevich.Messenger.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
-import ru.Harevich.Messanger.DTO.PersonDTO;
+import ru.Harevich.Messenger.DTO.PersonDTO;
 
 import java.util.List;
 

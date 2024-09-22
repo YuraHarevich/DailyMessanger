@@ -1,15 +1,15 @@
-package ru.Harevich.Messanger.controller;
+package ru.Harevich.Messenger.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.Harevich.Messanger.DTO.PersonDTO;
-import ru.Harevich.Messanger.entity.Message;
-import ru.Harevich.Messanger.entity.Person;
-import ru.Harevich.Messanger.entity.User;
-import ru.Harevich.Messanger.service.MessageService;
-import ru.Harevich.Messanger.service.PersonService;
-import ru.Harevich.Messanger.service.UserService;
+import ru.Harevich.Messenger.DTO.PersonDTO;
+import ru.Harevich.Messenger.entity.Message;
+import ru.Harevich.Messenger.entity.Person;
+import ru.Harevich.Messenger.entity.User;
+import ru.Harevich.Messenger.service.MessageService;
+import ru.Harevich.Messenger.service.PersonService;
+import ru.Harevich.Messenger.service.UserService;
 
 import java.util.List;
 import java.util.stream.Collectors;

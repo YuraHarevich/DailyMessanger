@@ -1,4 +1,4 @@
-package ru.Harevich.Messanger.entity;
+package ru.Harevich.Messenger.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

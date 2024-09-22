@@ -1,10 +1,10 @@
-package ru.Harevich.Messanger.detailsService;
+package ru.Harevich.Messenger.detailsService;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.Harevich.Messanger.entity.User;
-import ru.Harevich.Messanger.repository.UserRepository;
+import ru.Harevich.Messenger.entity.User;
+import ru.Harevich.Messenger.repository.UserRepository;
 
 import java.util.Optional;
 
@@ -22,7 +22,7 @@ public class UserDetailsService implements org.springframework.security.core.use
         if (user.isEmpty())
             throw new UsernameNotFoundException("username with such name doesn't exist");
 
-        return new ru.Harevich.Messanger.details
+        return new ru.Harevich.Messenger.details
                 .UserDetails(user.get());
     }
 }

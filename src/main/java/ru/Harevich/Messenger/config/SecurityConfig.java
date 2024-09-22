@@ -1,4 +1,4 @@
-package ru.Harevich.Messanger.config;
+package ru.Harevich.Messenger.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
-import ru.Harevich.Messanger.detailsService.UserDetailsService;
+import ru.Harevich.Messenger.detailsService.UserDetailsService;
 
 @Configuration
 @EnableWebSecurity
