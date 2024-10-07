@@ -22,7 +22,6 @@ public class UserDetailsService implements org.springframework.security.core.use
         if (user.isEmpty())
             throw new UsernameNotFoundException("username with such name doesn't exist");
 
-        return new ru.Harevich.Messenger.details
-                .UserDetails(user.get());
+        return new ru.Harevich.Messenger.details.UserDetails(user.get());
     }
 }

@@ -1,24 +1,20 @@
 package ru.Harevich.Messenger.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
-
 @Document
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-public class Message {
+public class Daily {
     @Id
     private String id;
-    private int chat_id;
+    private Long person_id;
     private String text;
-    private Date timestamp;
-    private int user_id;
-    private boolean read;
-
 }

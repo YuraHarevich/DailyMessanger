@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/css/basic.css" data-th-href="@{/css/basic.css}" />
+    <script>
+        // Устанавливаем начальную высоту текстового поля
+        document.querySelector('.note-input').style.height = document.querySelector('.note-input').scrollHeight + 'px';
+    </script>
+
+
+</head>
+<body>
+<nav>
+    <div class="left-sidebar">
+        <ul class="menu">
+            <li class="menu-item">
+                <a
+                ><img
+                        src="images/cornflower/Ouroboros.png"
+                        alt="Logo"
+                        class="menu-icon"
+                /></a>
+            </li>
+            <li class="menu-item">
+                <a href="/home" class="menu-font">
+                    <img
+                            src="images/default/Home.png"
+                            alt="Home-button"
+                            class="menu-icon"
+                    />
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/explore" class="menu-font">
+                    <img
+                            src="images/default/Search.png"
+                            alt="Search"
+                            class="menu-icon"
+                    />
+                    <span>Explore</span>
+                </a>
+            </li>
+            <li class="menu-item special">
+                <a href="/profile" class="menu-font">
+                    <img
+                            src="images/cornflower/Profile.png"
+                            alt="Profile"
+                            class="menu-icon"
+                    />
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/settings" class="menu-font">
+                    <img
+                            src="images/default/Settings.png"
+                            alt="Settings"
+                            class="menu-icon"
+                    />
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <div class="main-container">
+        <div class="friends-header">
+            <p class="main-label explore-main">Profile</p>
+        </div>
+        <div class="profile-section">
+            <img src="images/Registration-bg.png" alt="Profile Background" class="profile-background" />
+            <div class="avatar-container">
+                <img src="images/avatar.jpg" alt="Avatar" class="profile-avatar" />
+            </div>
+        </div>
+
+        <div class="profile-info">
+            <div class="name-container">
+                <p class="profile-name">Юра Харевич</p>
+                <button class="write-button">write</button>
+                <button class="round-button">...</button>
+            </div>
+            <p class="profile-username">@BlackPumba4</p>
+            <p class="profile-else">Born: 16.11.2004</p>
+            <p class="profile-else">Friends: 21</p>
+
+        </div>
+        <div class="about-section">
+            <p class="profile-else">About:</p>
+            <p class="profile-else">Текст о пользователе... Здесь вы можете добавить информацию о себе.</p>
+        </div>
+
+        <p class="profile-name">Friends:</p>
+
+        <div class="friend-list">
+            <div class="friend-item">
+                <img src="images/grey/square.png" alt="Avatar" class="avatar" />
+                <div class="friend-info">
+                    <h3 class="friend-name">Иван Иванов</h3>
+                    <p class="common-friends">11 friends</p>
+                    <a href="#" class="write-link">type</a>
+                </div>
+            </div>
+
+            <div class="friend-item">
+                <img src="images/grey/square.png" alt="Avatar" class="avatar" />
+                <div class="friend-info">
+                    <h3 class="friend-name">Анна Смирнова</h3>
+                    <p class="common-friends">81 friends</p>
+                    <a href="#" class="write-link">type</a>
+                </div>
+            </div>
+            <div class="friend-item">
+                <img src="images/grey/square.png" alt="Avatar" class="avatar" />
+                <div class="friend-info">
+                    <h3 class="friend-name">Иван Иванов</h3>
+                    <p class="common-friends">11 friends</p>
+                    <a href="#" class="write-link">type</a>
+                </div>
+            </div>
+
+            <div class="friend-item">
+                <img src="images/grey/square.png" alt="Avatar" class="avatar" />
+                <div class="friend-info">
+                    <h3 class="friend-name">Анна Смирнова</h3>
+                    <p class="common-friends">81 friends</p>
+                    <a href="#" class="write-link">type</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+</main>
+
+<article>
+    <div class="aticle-container">
+        <div class="right-sidebar">
+            <input type="text" placeholder="Search..." class="search-input" />
+            <div class="notes">
+                <div class="note">
+                    <img src="images/grey/square.png" alt="Mini Avatar" class="mini-avatar" />
+                    <div class="note-header">
+                        <h3 class="name">Каблучара</h3>
+                        <p class="note-text">Вот такой вот у меня сегодня плохой день, то ...</p>
+                    </div>
+                </div>
+                <div class="note">
+                    <img src="images/grey/square.png" alt="Mini Avatar" class="mini-avatar" />
+                    <div class="note-header">
+                        <h3 class="name">Vladicue</h3>
+                        <p class="note-text">Сегодня ехал из очередного трипа и случайно сбил...</p>
+                    </div>
+                </div>
+                <div class="note">
+                    <img src="images/grey/square.png" alt="Mini Avatar" class="mini-avatar" />
+                    <div class="note-header">
+                        <h3 class="name">Сок БеРеЗоВиК</h3>
+                        <p class="note-text">Армия это просто классно, сгодня въебали с пацана...</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</article>
+</body>
+</html>

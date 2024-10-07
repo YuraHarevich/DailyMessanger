@@ -8,11 +8,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name="MYUSER")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class User {
     public User(String username, String email, String password) {
@@ -33,6 +35,9 @@ public class User {
 
     @Size(min=5,max =60,message = "wrong password size")
     private String password;
+
+    @Column(updatable = false, insertable = false)
+    private LocalDateTime created_at;
 
     private String role;
 }

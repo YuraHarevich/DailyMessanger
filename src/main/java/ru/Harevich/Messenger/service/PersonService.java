@@ -19,4 +19,7 @@ public class PersonService {
     public List<Person> getAll(){
         return personRepository.findAll();
     }
+    public void createPerson(Person person){
+        personRepository.save(person);
+    }
 }

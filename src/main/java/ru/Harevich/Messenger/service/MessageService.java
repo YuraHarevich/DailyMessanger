@@ -17,7 +17,5 @@ public class MessageService {
     public List<Message> get(){
         return repository.findAll();
     }
-    public Message getBySender(String sender){
-        return repository.findBySender(sender);
-    }
+
 }

@@ -4,6 +4,7 @@ package ru.Harevich.Messenger.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -14,6 +15,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+import org.springframework.security.web.context.DelegatingSecurityContextRepository;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
+import org.springframework.security.web.context.RequestAttributeSecurityContextRepository;
+import org.springframework.security.web.context.SecurityContextRepository;
 import ru.Harevich.Messenger.detailsService.UserDetailsService;
 
 @Configuration
@@ -31,11 +36,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorizeRequests ->
-                        authorizeRequests
-                                .anyRequest().permitAll()
-//                                .requestMatchers("/manage/**").hasRole("ADMIN")
-//                                .requestMatchers("/registration","/login").permitAll()
-//                                .anyRequest().hasRole("USER")
+                                authorizeRequests.requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
+                                .requestMatchers("/manage/**").hasRole("ADMIN")
+                                .requestMatchers("/registration","/after-registration/**","/login").permitAll()
+                                .anyRequest().hasRole("USER")
 
                 )
                 .formLogin(formLogin ->
@@ -43,9 +47,14 @@ public class SecurityConfig {
                                 .loginPage("/login")
                                 .loginProcessingUrl("/process_login")
                                 .successHandler(savedRequestAwareAuthenticationSuccessHandler())
-                                .defaultSuccessUrl("/hello", true)
+                                .defaultSuccessUrl("/home", true)
                                 .permitAll()
-                );
+                )
+                .logout(logout ->
+                        logout
+                                .logoutUrl("/logout")
+                                .logoutSuccessUrl("/login")
+                )
         return http.build();
     }
     @Bean
@@ -75,4 +84,5 @@ public class SecurityConfig {
     public SavedRequestAwareAuthenticationSuccessHandler savedRequestAwareAuthenticationSuccessHandler() {
         return new SavedRequestAwareAuthenticationSuccessHandler();
     }
+
 }

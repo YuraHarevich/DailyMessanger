@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Form</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/css/registration.css" data-th-href="@{/css/registration.css}" />
+</head>
+<body>
+<div class="registration-containter">
+    <div class="form-box">
+        <img src="../images/cornflower/Ouroboros.png" alt="Logo" class="form-logo">
+        <h2>Additional questions.</h2>
+        <form method="POST" th:action="@{/after-registration}" th:object="${person}">
+            <input type="text" placeholder="Name" th:field="*{name}" required>
+            <input type="text" placeholder="Surname" th:field="*{surname}" required>
+            <input type="text" placeholder="About u" required>
+            <div class="date-field">
+                <label for="birthday">Birthday</label>
+                <input type="date" th:field="*{birthday}" id="birthday" required>
+            </div>
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+            <button type="submit" class="btn primary registration">Next</button>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>
